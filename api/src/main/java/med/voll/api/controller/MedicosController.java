@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,8 +46,10 @@ public class MedicosController {
     //para hacer eliminacion logica del medico
     @Transactional
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Long id){
+    public ResponseEntity eliminar(@PathVariable Long id){
         var medico = repository.getReferenceById(id);
         medico.elimiar();
+
+        return ResponseEntity.noContent().build();
     }
 }
