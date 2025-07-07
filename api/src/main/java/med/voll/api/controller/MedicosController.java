@@ -33,9 +33,11 @@ public class MedicosController {
 
     @Transactional
     @PutMapping
-    public void actualizar(@RequestBody @Valid DatosActualizacionMedico datos){
+    public ResponseEntity actualizar(@RequestBody @Valid DatosActualizacionMedico datos){
         var medico = repository.getReferenceById(datos.id());
         medico.actualizarInformaciones(datos);
+
+        return ResponseEntity.ok(new DatosDetallesMedico(medico));
     }
 
     // para hacer una eliminacion fisica del medico
