@@ -28,7 +28,7 @@ public class Direccion {
         this.estado = datosDireccion.estado();
     }
 
-    public void actualizarDirecion(DatosDireccion datos) {
+    public void actualizarDireccion(DatosDireccion datos) {
         if (datos.calle() != null) {
             this.calle = datos.calle();
         }

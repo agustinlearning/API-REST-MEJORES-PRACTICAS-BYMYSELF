@@ -53,7 +53,7 @@ public class Medico {
             this.telefono = datos.telefono();
         }
         if(datos.direccion() != null) {
-            this.direccion.actualizarDirecion(datos.direccion());
+            this.direccion.actualizarDireccion(datos.direccion());
         }
     }
 
