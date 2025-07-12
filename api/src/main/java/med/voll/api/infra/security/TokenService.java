@@ -31,7 +31,7 @@ public class TokenService {
         }
     }
     private Instant fechaExpiracion() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-04:00"));
+        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-04:00")); //cambiar dependiendo de la zona horaria
     }
 
     public String getSubject(String tokenJWT) {
